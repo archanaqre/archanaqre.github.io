@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://archanaqre.github.io
+Sitemap: https://archanaqre.github.io/sitemap.xml
