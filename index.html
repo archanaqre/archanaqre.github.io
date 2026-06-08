@@ -177,7 +177,7 @@
     <main id="main" class="main">
 
       <!-- About -->
-      <section class="intro reveal">
+      <section id="about" class="intro reveal">
         <p>
           I am interested in understanding the capabilities and limitations of AI systems. My research
           focuses on how conversational agents, computer-use agents, and multimodal systems reason, fail,
@@ -188,7 +188,7 @@
       </section>
 
       <!-- Research -->
-      <section class="block reveal">
+      <section id="research" class="block reveal">
         <h2 class="section-title">Research</h2>
         <ul class="pub-list">
 
@@ -290,7 +290,7 @@
       </section>
 
       <!-- Experience -->
-      <section class="block reveal">
+      <section id="experience" class="block reveal">
         <h2 class="section-title">Experience</h2>
         <ul class="exp-list">
 
@@ -328,7 +328,7 @@
             <div class="what">
               <div class="exp-head">
                 <span class="orglogo" title="Nanyang Technological University"><img src="logos/ntu_crest.png" alt="NTU Singapore logo" loading="lazy" /></span>
-                <h3>NLP Research Intern · <a href="https://www.ntu.edu.sg/scse" target="_blank" rel="noopener">Speech Lab, NTU Singapore</a> <span class="adv">· Advisor: Prof. Chng Eng Siong</span></h3>
+                <h3>NLP Research Intern · <a href="https://www.ntu.edu.sg/scse" target="_blank" rel="noopener">Speech Lab, NTU Singapore</a> <span class="adv">· Advisor: <a href="https://aseschng.github.io/default.html" target="_blank" rel="noopener">Prof. Chng Eng Siong</a></span></h3>
               </div>
               <p>Evaluated statistical language models for conversational and code-switched speech, and applied quality filtering for data augmentation.</p>
             </div>
@@ -360,7 +360,7 @@
       </section>
 
       <!-- Education -->
-      <section class="block reveal">
+      <section id="education" class="block reveal">
         <h2 class="section-title">Education</h2>
         <ul class="exp-list">
 
@@ -390,7 +390,7 @@
       </section>
 
       <!-- Projects -->
-      <section class="block reveal">
+      <section id="projects" class="block reveal">
         <h2 class="section-title">Selected Projects</h2>
         <ul class="proj-list">
 
@@ -421,6 +421,14 @@
 
     </main>
   </div>
+
+  <!-- Section scroll-spy -->
+  <nav class="scrollspy" aria-label="Section navigation">
+    <a href="#research" data-label="Research"><span class="ss-dot"></span></a>
+    <a href="#experience" data-label="Experience"><span class="ss-dot"></span></a>
+    <a href="#education" data-label="Education"><span class="ss-dot"></span></a>
+    <a href="#projects" data-label="Projects"><span class="ss-dot"></span></a>
+  </nav>
 
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   <script>
@@ -459,6 +467,51 @@
         });
       }, { threshold: 0.12, rootMargin: '0px 0px -7% 0px' });
       els.forEach(function(el){ io.observe(el); });
+    })();
+  </script>
+  <script>
+    /* Section scroll-spy: highlight the dot for the section currently in view */
+    (function(){
+      var nav = document.querySelector('.scrollspy');
+      if(!nav) return;
+      var links = Array.prototype.slice.call(nav.querySelectorAll('a'));
+      var sections = links.map(function(a){
+        var sec = document.getElementById(a.getAttribute('href').slice(1));
+        if(!sec) return null;
+        return { id: sec.id, heading: sec.querySelector('.section-title') || sec };
+      }).filter(Boolean);
+      if(!sections.length) return;
+
+      function setActive(id){
+        links.forEach(function(a){
+          var on = a.getAttribute('href') === '#' + id;
+          a.classList.toggle('is-active', on);
+          if(on) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+        });
+      }
+
+      var ticking = false;
+      function update(){
+        ticking = false;
+        var vh = window.innerHeight;
+        var current = sections[0].id;
+        /* activate a section as soon as its heading scrolls into view from the bottom;
+           the last heading that has entered the viewport wins */
+        sections.forEach(function(s){
+          if(s.heading.getBoundingClientRect().top <= vh){ current = s.id; }
+        });
+        /* if scrolled to the very bottom, force the last section active */
+        if(vh + window.scrollY >= document.documentElement.scrollHeight - 4){
+          current = sections[sections.length - 1].id;
+        }
+        setActive(current);
+      }
+      function onScroll(){
+        if(!ticking){ ticking = true; requestAnimationFrame(update); }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll);
+      update();
     })();
   </script>
 </body>
