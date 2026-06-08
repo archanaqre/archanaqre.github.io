@@ -140,6 +140,13 @@
 
         <h1 class="name">Archana Yadav</h1>
         <p class="role">Research Intern,<br />Microsoft Research</p>
+
+        <div class="proof" aria-label="Highlights">
+          <span>Microsoft Research</span>
+          <span>ACL 2025 Oral</span>
+          <span>CFILT, IIT Bombay</span>
+        </div>
+
         <p class="tagline">Agentic systems &middot; LLM evaluation &middot; NLP</p>
 
         <nav class="links" aria-label="Profile links">
@@ -179,11 +186,9 @@
       <!-- About -->
       <section id="about" class="intro reveal">
         <p>
-          I am interested in understanding the capabilities and limitations of AI systems. My research
-          focuses on how conversational agents, computer-use agents, and multimodal systems reason, fail,
-          and interact with their environments. I build evaluation frameworks, diagnostic tools, and
-          experimental environments that help move beyond measuring whether a system works toward
-          understanding why it succeeds or fails.
+          I study the capabilities and failure modes of AI systems, with a focus on conversational agents,
+          tool-using agents, and multimodal systems. My work builds evaluation frameworks, diagnostic
+          methods, and synthetic environments to understand why systems succeed, fail, and behave the way they do.
         </p>
       </section>
 
@@ -191,6 +196,55 @@
       <section id="research" class="block reveal">
         <h2 class="section-title">Research</h2>
         <ul class="pub-list">
+
+          <li class="pub">
+            <div class="pub-text">
+              <p class="rail-year">2025</p>
+              <div class="pub-body">
+                <h3>From Recall to Creation: Generating Follow-Up Questions using Bloom's Taxonomy and Grice's Maxims</h3>
+                <p class="meta">ACL 2025 Industry Track — Oral</p>
+                <figure class="pub-fig">
+                  <img class="fig-doc" src="papers/from-recall-to-creation.png" alt="Figure 2 from the paper — the recursive follow-up-question-generation pipeline" loading="lazy" />
+                </figure>
+                <p class="pub-q">How can we systematically evaluate the cognitive capabilities and limitations of conversational AI systems beyond surface-level task success?</p>
+                <p class="desc"><span class="tldr">TL;DR</span> This work introduces a cognitively-grounded evaluation framework that probes conversational agents across increasing levels of reasoning complexity. Combining Bloom's Taxonomy-based cognitive scaffolding with Grice's Maxims based evaluation principles, the framework enables fine-grained analysis of where and how conversational systems fail, moving beyond traditional accuracy-centric evaluation.</p>
+                <p class="pub-links">
+                  <a href="https://aclanthology.org/2025.acl-industry.93.pdf" target="_blank" rel="noopener">Paper</a>
+                </p>
+              </div>
+            </div>
+          </li>
+
+          <li class="pub">
+            <div class="pub-text">
+              <p class="rail-year">2025</p>
+              <div class="pub-body">
+                <h3>Magentic Marketplace: An Open-Source Environment for Studying Agentic Markets</h3>
+                <p class="meta">ICLR 2026 — Under Review</p>
+                <figure class="pub-fig">
+                  <img class="fig-doc" src="papers/magentic-marketplace.png" alt="Figure 3 from the Magentic Marketplace paper — overview of the two agent types and Action Router" loading="lazy" />
+                </figure>
+                <p class="pub-q">How can we study two-sided agentic markets end to end, where assistant agents represent consumers and service agents represent businesses? How do search, communication, negotiation, and transaction protocols shape welfare, manipulation resistance, and behavioral bias?</p>
+                <p class="desc"><span class="tldr">TL;DR</span> This work introduces Magentic Marketplace, an open-source simulated environment for agentic economies. It supports the full marketplace lifecycle, including search, messaging, proposals, and payments. The platform is used to probe consumer welfare, consideration-set size effects, manipulation attacks, and search and proposal bias. The main contribution is a controlled testbed for designing and stress-testing agentic market mechanisms before deployment.</p>
+                <p class="pub-links">
+                  <a href="https://arxiv.org/abs/2510.25779" target="_blank" rel="noopener">arXiv</a>
+                  <a href="https://www.microsoft.com/en-us/research/blog/magentic-marketplace-an-open-source-simulation-environment-for-studying-agentic-markets/" target="_blank" rel="noopener">Microsoft Blog</a>
+                </p>
+              </div>
+            </div>
+          </li>
+
+          <li class="pub">
+            <div class="pub-text">
+              <p class="rail-year">2026</p>
+              <div class="pub-body">
+                <h3>When Do Agents Go Wrong: A Failure-Centric Evaluation of Agentic Systems</h3>
+                <p class="meta">Under Review</p>
+                <p class="pub-q">How can we evaluate LLM-based agentic systems at the trajectory level, localize execution pathologies, and separate root causes from downstream outcomes without task-specific ground truth?</p>
+                <p class="desc"><span class="tldr">TL;DR</span> This work shifts agent evaluation from outcome-centric scoring to failure-centric trajectory diagnostics. It introduces a Unified Failure Taxonomy for execution traces and reference-free meta-metrics, Tool Usage Entropy (TUE), Plan Distribution Divergence (PDD), and Reasoning-Action Correlation (RAC). These metrics capture tool-use diversity, planning stability, and reasoning-action alignment. The framework is used as a diagnostic lens for interpreting, auditing, and debugging agentic behavior.</p>
+              </div>
+            </div>
+          </li>
 
           <li class="pub">
             <div class="pub-text">
@@ -224,59 +278,10 @@
 
           <li class="pub">
             <div class="pub-text">
-              <p class="rail-year">2026</p>
-              <div class="pub-body">
-                <h3>When Do Agents Go Wrong: A Failure-Centric Evaluation of Agentic Systems</h3>
-                <p class="meta">Under Review</p>
-                <p class="pub-q">How can we evaluate LLM-based agentic systems at the trajectory level, localize execution pathologies, and separate root causes from downstream outcomes without task-specific ground truth?</p>
-                <p class="desc"><span class="tldr">TL;DR</span> This work shifts agent evaluation from outcome-centric scoring to failure-centric trajectory diagnostics. It introduces a Unified Failure Taxonomy for execution traces and reference-free meta-metrics, Tool Usage Entropy (TUE), Plan Distribution Divergence (PDD), and Reasoning-Action Correlation (RAC). These metrics capture tool-use diversity, planning stability, and reasoning-action alignment. The framework is used as a diagnostic lens for interpreting, auditing, and debugging agentic behavior.</p>
-              </div>
-            </div>
-          </li>
-
-          <li class="pub">
-            <div class="pub-text">
-              <p class="rail-year">2025</p>
-              <div class="pub-body">
-                <h3>Magentic Marketplace: An Open-Source Environment for Studying Agentic Markets</h3>
-                <p class="meta">Submitted to ICLR 2026 (Under Review)</p>
-                <figure class="pub-fig">
-                  <img class="fig-doc" src="papers/magentic-marketplace.png" alt="Figure 3 from the Magentic Marketplace paper — overview of the two agent types and Action Router" loading="lazy" />
-                </figure>
-                <p class="pub-q">How can we study two-sided agentic markets end to end, where assistant agents represent consumers and service agents represent businesses? How do search, communication, negotiation, and transaction protocols shape welfare, manipulation resistance, and behavioral bias?</p>
-                <p class="desc"><span class="tldr">TL;DR</span> This work introduces Magentic Marketplace, an open-source simulated environment for agentic economies. It supports the full marketplace lifecycle, including search, messaging, proposals, and payments. The platform is used to probe consumer welfare, consideration-set size effects, manipulation attacks, and search and proposal bias. The main contribution is a controlled testbed for designing and stress-testing agentic market mechanisms before deployment.</p>
-                <p class="pub-links">
-                  <a href="https://arxiv.org/abs/2510.25779" target="_blank" rel="noopener">arXiv</a>
-                  <a href="https://www.microsoft.com/en-us/research/blog/magentic-marketplace-an-open-source-simulation-environment-for-studying-agentic-markets/" target="_blank" rel="noopener">Microsoft Blog</a>
-                </p>
-              </div>
-            </div>
-          </li>
-
-          <li class="pub">
-            <div class="pub-text">
-              <p class="rail-year">2025</p>
-              <div class="pub-body">
-                <h3>From Recall to Creation: Generating Follow-Up Questions using Bloom's Taxonomy and Grice's Maxims</h3>
-                <p class="meta">ACL 2025 (Industry Track) — Oral</p>
-                <figure class="pub-fig">
-                  <img class="fig-doc" src="papers/from-recall-to-creation.png" alt="Figure 2 from the paper — the recursive follow-up-question-generation pipeline" loading="lazy" />
-                </figure>
-                <p class="pub-q">How can we systematically evaluate the cognitive capabilities and limitations of conversational AI systems beyond surface-level task success?</p>
-                <p class="desc"><span class="tldr">TL;DR</span> This work introduces a cognitively-grounded evaluation framework that probes conversational agents across increasing levels of reasoning complexity. Combining Bloom's Taxonomy-based cognitive scaffolding with Grice's Maxims based evaluation principles, the framework enables fine-grained analysis of where and how conversational systems fail, moving beyond traditional accuracy-centric evaluation.</p>
-                <p class="pub-links">
-                  <a href="https://aclanthology.org/2025.acl-industry.93.pdf" target="_blank" rel="noopener">Paper</a>
-                </p>
-              </div>
-            </div>
-          </li>
-
-          <li class="pub">
-            <div class="pub-text">
               <p class="rail-year">2024</p>
               <div class="pub-body">
                 <h3>Whisper-ing with Subtitles: Making TV Shows Chatty for All</h3>
-                <p class="meta">Submitted to ARR Aug 2024 (Pre-print)</p>
+                <p class="meta">Preprint</p>
                 <figure class="pub-fig">
                   <img class="fig-illus" src="papers/whispering-subtitles.svg" alt="Audio waveform transcribed into a captioned screen" loading="lazy" width="720" height="240" />
                 </figure>
