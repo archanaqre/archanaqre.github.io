@@ -1,0 +1,13 @@
+# Local backup of the old Next.js build (kept on disk, not published)
+_legacy_build/
+
+# Local preview tooling
+.claude/
+
+# Full-res source image (superseded by optimized papers/faragen-pipeline.png)
+papers/faragen15_v2.png
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 240" role="img" aria-label="Audio waveform transcribed into a captioned screen">
+  <style>
+    .bar   { transform-box: fill-box; transform-origin: center; animation: wave 2.6s ease-in-out infinite; }
+    .bar.d { fill:#C4C4C4; } .bar.m { fill:#9a9a9a; } .bar.k { fill:#1A1A1A; }
+    .bar:nth-child(3n)   { animation-delay:.25s; }
+    .bar:nth-child(3n+1) { animation-delay:.6s; }
+    .bar:nth-child(4n)   { animation-delay:.9s; }
+    .flow  { stroke:#9a9a9a; stroke-width:2; fill:none; stroke-dasharray:4 7; animation:flow 5s linear infinite; }
+    .frame { fill:#FAFAF8; stroke:#1A1A1A; stroke-width:2.5; }
+    .vid   { fill:#F0EFEC; stroke:#D8D8D8; stroke-width:1; }
+    .play  { stroke:#666; stroke-width:2; fill:none; }
+    .ptri  { fill:#666; }
+    .cc    { fill:#1A1A1A; }
+    .cct   { fill:#FAFAF8; font:700 11px 'Inter',sans-serif; letter-spacing:.04em; }
+    .ln    { fill:#C4C4C4; }
+    .caret { stroke:#1A1A1A; stroke-width:1.6; animation:blink 1.5s step-end infinite; }
+    @keyframes wave  { 0%,100%{ transform:scaleY(1); } 50%{ transform:scaleY(.5); } }
+    @keyframes flow  { to { stroke-dashoffset:-44; } }
+    @keyframes blink { 0%,100%{ opacity:1; } 50%{ opacity:0; } }
+    @media (prefers-reduced-motion: reduce){ * { animation:none !important; } }
+  </style>
+
+  <!-- waveform (audio in), centered on y=92 -->
+  <g>
+    <rect class="bar d" x="40"  y="74"  width="5" height="36" rx="2.5"/>
+    <rect class="bar m" x="58"  y="60"  width="5" height="64" rx="2.5"/>
+    <rect class="bar k" x="76"  y="48"  width="5" height="88" rx="2.5"/>
+    <rect class="bar d" x="94"  y="70"  width="5" height="44" rx="2.5"/>
+    <rect class="bar m" x="112" y="80"  width="5" height="24" rx="2.5"/>
+    <rect class="bar d" x="130" y="56"  width="5" height="72" rx="2.5"/>
+    <rect class="bar k" x="148" y="44"  width="5" height="96" rx="2.5"/>
+    <rect class="bar m" x="166" y="66"  width="5" height="52" rx="2.5"/>
+    <rect class="bar d" x="184" y="78"  width="5" height="28" rx="2.5"/>
+    <rect class="bar m" x="202" y="58"  width="5" height="68" rx="2.5"/>
+    <rect class="bar k" x="220" y="50"  width="5" height="84" rx="2.5"/>
+    <rect class="bar d" x="238" y="72"  width="5" height="40" rx="2.5"/>
+  </g>
+
+  <!-- pipeline arrow (audio -> captions) -->
+  <line class="flow" x1="262" y1="92" x2="344" y2="92"/>
+  <path d="M344 84 L360 92 L344 100 Z" fill="#9a9a9a"/>
+
+  <!-- captioned screen -->
+  <rect class="frame" x="378" y="34" width="304" height="166" rx="16"/>
+  <rect class="vid" x="396" y="50" width="268" height="86" rx="8"/>
+  <circle class="play" cx="530" cy="93" r="17"/>
+  <path class="ptri" d="M525 85 L540 93 L525 101 Z"/>
+
+  <!-- caption strip -->
+  <rect class="cc" x="396" y="150" width="30" height="22" rx="5"/>
+  <text class="cct" x="411" y="165" text-anchor="middle">CC</text>
+  <rect class="ln" x="434" y="152" width="206" height="8" rx="4"/>
+  <rect class="ln" x="396" y="178" width="150" height="8" rx="4"/>
+  <line class="caret" x1="552" y1="150" x2="552" y2="162"/>
+</svg>
